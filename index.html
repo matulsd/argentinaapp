@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ghost.cc - Mi Argentina Fake</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: glow 2s ease-in-out infinite alternate;
+      color: #00ff00;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+      }
+      to {
+        text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00;
+      }
+    }
+
+    #particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 20px;
+      background-color: black;
+      border: 1px solid #00ff00;
+      color: white;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #00ff00;
+      border: none;
+      color: black;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #009900;
+    }
+  </style>
+</head>
+<body>
+  <h1>ghost.cc</h1>
+  <h2>Ingrese la contraseña para descargar la app</h2>
+  <form id="loginForm" onsubmit="return checkPassword()">
+    <input type="password" id="password" placeholder="Contraseña">
+    <br>
+    <button type="submit">Entrar</button>
+  </form>
+
+  <div id="particles"></div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById('password').value;
+      if (password === 'nosecomparte') {
+        window.location.href = 'download.html';
+      } else {
+        alert('Contraseña incorrecta');
+      }
+      return false;
+    }
+  </script>
+</body>
+</html>
